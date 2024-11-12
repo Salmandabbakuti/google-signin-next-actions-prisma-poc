@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import GoogleProvider from "./components/GoogleProvider";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -21,7 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <GoogleProvider>
+          {children}
+        </GoogleProvider>
       </body>
     </html>
   );
