@@ -25,4 +25,7 @@ model User {
   lastActiveAt DateTime @updatedAt
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+
+  @@index([id, email, sub])
+  @@map("users")
 }
