@@ -62,13 +62,20 @@ const ProfileForm = () => {
   return (
     <div>
       <Card
+        bordered
         title="Profile"
         loading={dataLoading}
         style={{
           maxWidth: 600,
           minWidth: 300,
-          margin: "30px auto"
+          margin: "30px auto",
+          border: "2px solid #ddd"
         }}
+        extra={
+          <Button type="default" shape="round" onClick={handleLogout}>
+            Logout
+          </Button>
+        }
       >
         <Avatar
           size={100}
@@ -105,25 +112,15 @@ const ProfileForm = () => {
             <Input readOnly />
           </Form.Item>
 
-          <Form.Item label="Updated At" name="updatedAt">
-            <Input readOnly />
-          </Form.Item>
-
           <Form.Item>
-            <Space>
-              <Button
-                type="primary"
-                shape="round"
-                loading={loading}
-                htmlType="submit"
-              >
-                Update Profile
-              </Button>
-              {/* logout button */}
-              <Button type="default" shape="round" onClick={handleLogout}>
-                Logout
-              </Button>
-            </Space>
+            <Button
+              type="primary"
+              shape="round"
+              loading={loading}
+              htmlType="submit"
+            >
+              Update
+            </Button>
           </Form.Item>
         </Form>
       </Card>
