@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Card, Form, Input, Button, message, Avatar, Space } from "antd";
+import { Card, Form, Input, Button, message, Avatar } from "antd";
 import { updateMyProfile, getMyProfile, logout } from "@/lib/actions";
 
 const ProfileForm = () => {
