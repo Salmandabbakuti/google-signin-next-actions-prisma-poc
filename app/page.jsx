@@ -7,6 +7,7 @@ import styles from "./page.module.css";
 const handleOnSuccess = async (response) => {
   console.log("Google login response:", response);
   try {
+    message.info("Logging in...");
     await googleLogin(response?.credential);
     message.success("Login successful. Redirecting...");
   } catch (error) {
@@ -17,6 +18,7 @@ const handleOnSuccess = async (response) => {
 
 const handleOnError = (error) => {
   console.error("Google login failure:", error);
+  message.error("Login failed. Please try again.");
 };
 
 export default function Home() {

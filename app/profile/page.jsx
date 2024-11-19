@@ -12,13 +12,11 @@ const ProfileForm = () => {
     handleGetProfile();
   }, [form]);
 
-  console.log("form value", form.getFieldValue("picture"));
-
   const handleGetProfile = async () => {
     setDataLoading(true);
     try {
       const data = await getMyProfile();
-      console.log("Profile data:", data);
+      // console.log("Profile data:", data);
       form.setFieldsValue(data);
     } catch (error) {
       message.error("Failed to fetch profile data. Please try again.");
@@ -29,8 +27,7 @@ const ProfileForm = () => {
   };
 
   const onFinish = (values) => {
-    // Send updated data to backend (replace with actual API endpoint)
-    console.log("Form values:", values);
+    // console.log("Form values:", values);
     const { name, bio, picture, country, phone } = values;
     setLoading(true);
     updateMyProfile({ name, bio, picture, country, phone })
