@@ -10,7 +10,7 @@ const ProfileForm = () => {
 
   useEffect(() => {
     handleGetProfile();
-  }, [form]);
+  }, []);
 
   const handleGetProfile = async () => {
     setDataLoading(true);
@@ -32,6 +32,7 @@ const ProfileForm = () => {
     setLoading(true);
     updateMyProfile({ name, bio, picture, country, phone })
       .then((data) => {
+        form.setFieldsValue(data);
         message.success("Profile updated successfully");
       })
       .catch((error) => {
